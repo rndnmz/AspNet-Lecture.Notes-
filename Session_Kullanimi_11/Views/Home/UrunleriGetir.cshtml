@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using System.Text.Json;
+@using Session_Kullanimi_11.Models;
+@inject IHttpContextAccessor Accessor;
+
+
+@{
+
+    var JsonUrunler = Accessor.HttpContext.Session.GetString("urunler");
+    List<Product> products = JsonSerializer.Deserialize<List<Product>>(JsonUrunler);
+    string adi = Accessor.HttpContext.Session.GetString("user");
+}
+
+
+
+<div>
+    <table style="border"> 
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Description</td>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in products)
+            {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Description</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>Adınız :  @adi</div>

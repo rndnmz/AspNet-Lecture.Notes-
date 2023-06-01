@@ -1,0 +1,25 @@
+﻿@*
+    
+_ViewStart.cshtml özel bir View'dir.
+_ViewStart dosyası uygulamayı ayağa kalkarken ilk çalıştırılan View'dir.
+Sistemde _ViewStart.cshtml isimli bir dosya var ise uygulama buradan çalışmaya başlayacaktır.
+Burası Ortak tanımlamaları yaptığımz ve projeye dahil ettiğimiz dosyadır.
+Genellikle Layout tanımlamasını burada bir kere yaparız ve tekrar tekrar diğer sayflarda layout tanımlaması yapmayız.
+Eğer bir sayfada layout kullanılmayacaksa ilgili sayfada:
+@{Layout = null;}
+
+Eğer başka bir layout kullanılacaksa da o zaman ilgili sayfada aşağıdaki gibi ilgili layout'u verebilirim.
+@{Layout = "Başka bir layout yazıyorum";}
+
+_ViewStart.cshtml'lin konumlandığı yer:
+Views/_ViewStart.cshtml
+
+*@
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+

@@ -1,0 +1,23 @@
+﻿@model List<Viewe_Veri_Gonderme.Models.Product>
+@*Razor*@
+
+<div>
+    <table>
+        <th>Id</th>
+        <th>Ürün Adı</th>
+        <th>Ürün Fiyatı</th>
+        <th>Adet</th>
+    
+        <tbody>
+            @foreach(var p in Model)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.UrunAdi</td>
+                    <td>@p.Fiyat</td>
+                    <td>@p.Adet</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

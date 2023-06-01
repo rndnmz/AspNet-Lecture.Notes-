@@ -1,0 +1,12 @@
+﻿@model List<Kategori>
+<div class="list-group">
+    <a href="#"> Tüm Kategoriler</a>
+    @foreach (var kategori in Model)
+    {
+        <a href="#" class="list-group-item">@kategori.KategoriAdi</a>
+    }
+
+
+
+
+</div>
